@@ -1,0 +1,35 @@
+@import "bourbon";
+@import "neat";
+
+@import "reset/normalize";
+
+@import "base/base";
+
+header,
+main,
+footer {
+  @include grid-container;
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+.col-left,
+.col-right,
+.col-full,
+.item {
+  @include grid-column(12);
+}
+.col-left,
+.col-right {
+  text-align: left;
+}
+.col-full {
+  text-align: center;
+}
+
+body.index {
+  background-color: #fff;
+  img {
+    margin-top: 5em;
+  }
+}

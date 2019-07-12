@@ -1,0 +1,18 @@
+<% layout = current_page.options[:layout] %>
+<% parent = current_page.data.parent %>
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= page_title(current_page.data.title) %></title>
+    <%= stylesheet_link_tag "main" %>
+    <%= favicon_tag 'favicon.ico' %>
+  </head>
+  <body class="<%= body_class(layout, parent) %>">
+    <main role="main">
+      <%= yield %>
+    </main>
+  </body>
+</html>
