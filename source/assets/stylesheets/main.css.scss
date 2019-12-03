@@ -5,31 +5,8 @@
 
 @import "base/base";
 
-header,
-main,
-footer {
-  @include grid-container;
-  margin: 0 auto;
-  max-width: $max-width;
-}
-
-.col-left,
-.col-right,
-.col-full,
-.item {
-  @include grid-column(12);
-}
-.col-left,
-.col-right {
-  text-align: left;
-}
-.col-full {
-  text-align: center;
-}
-
-body.index {
-  background-color: #fff;
-  img {
-    margin-top: 5em;
-  }
-}
+@import "pages/about";
+@import "pages/contact";
+@import "pages/index";
+@import "pages/portfolio";
+@import "pages/project";

@@ -1,0 +1,62 @@
+/* Inline List */
+@mixin inline-list {
+  list-style-type: none;
+  &,
+  & li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+}
+
+/* Inline Block List */
+@mixin inline-block-list($space: 1em) {
+  list-style-type: none;
+  &,
+  & li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  & li {
+    margin: 0 $space 0 0;
+  }
+}
+
+/* Inline Block List */
+@mixin navigation-list {
+  position: absolute;
+  right: 0;
+  top: 0;
+  list-style-type: none;
+  &,
+  & li {
+    //margin: 0;
+    //padding: 0;
+    display: block;
+  }
+}
+
+/* List with Font Awesome bullets */
+@mixin list-awesome($icon, $width, $color) {
+  list-style-type: none;
+  li {
+    padding-left: $width;
+    &:before {
+      content: $icon;
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 900;
+      display: inline-block;
+      width: $width;
+      margin-left: -$width;
+      color: $color;
+    }
+  }
+}
+
+/* Standard shadow */
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+}

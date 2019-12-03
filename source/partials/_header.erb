@@ -1,0 +1,17 @@
+<header>
+  <div class="col-left">
+    <%= link_to image_tag('logo.gif', alt: data.config.company_name), '/' %>
+  </div>
+  <div class="col-right">
+    <ul id="menu">
+      <li class="toggler">
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </li>
+      <li><%= link_to 'about', '/about' %></li>
+      <li><%= link_to 'portfolio', '/portfolio' %></li>
+      <li><%= link_to 'contact', '/contact' %></li>
+    </ul>
+  </div>
+</header>

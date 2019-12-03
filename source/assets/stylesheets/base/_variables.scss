@@ -1,6 +1,8 @@
 // Typography
-$base-font-family: $font-stack-system;
+$base-font-family: "futura-pt", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-weight: 300;
 $heading-font-family: $base-font-family;
+$heading-font-weight: 600;
 
 // Line height
 $base-line-height: 1.5;
@@ -14,13 +16,21 @@ $base-z-index: 0;
 
 // Colors
 $blue: #1565c0;
+$gray: #776;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+$light-green: #85c241;
+$green: #6ea439;
+$dark-green: darken($green, 20%);
+$red: IndianRed;
+$bright-red: Firebrick;
+$white: #fff;
+$black: #000;
 
 // Font Colors
-$base-font-color: $dark-gray;
-$action-color: $blue;
+$base-font-color: $black;
+$action-color: $red;
 
 // Border
 $base-border-color: $light-gray;
@@ -61,4 +71,17 @@ $print-only-grid: (
   media: "print",
 );
 
+$link-color: $action-color;
+$link-hover-color: $bright-red;
+$secondary-link-color: $medium-gray;
+$secondary-link-hover-color: $bright-red;
+$header-color: $base-font-color;
+$header-link-color: $base-font-color;
+$header-link-hover-color: $bright-red;
+$footer-color: $medium-gray;
+$footer-link-color: $medium-gray;
+$footer-link-hover-color: $bright-red;
 $max-width: 1280px;
+$flip-bg-color: #777;
+$flip-text-color: #fff;
+$flip-button-color: #777;

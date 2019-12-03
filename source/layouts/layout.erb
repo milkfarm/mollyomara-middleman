@@ -7,12 +7,24 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= page_title(current_page.data.title) %></title>
-    <%= stylesheet_link_tag "main" %>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/tnp8ury.css">
+    <script src="https://kit.fontawesome.com/3d6d3c695c.js"></script>
+
+    <!-- Styles -->
+    <%= stylesheet_link_tag 'main' %>
+
+    <!-- Other -->
+    <%= partial 'partials/analytics' %>
     <%= favicon_tag 'favicon.ico' %>
   </head>
   <body class="<%= body_class(layout, parent) %>">
-    <main role="main">
+    <%= partial 'partials/header' %>
+    <main>
       <%= yield %>
     </main>
+    <%= partial 'partials/footer' %>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>

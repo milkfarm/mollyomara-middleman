@@ -1,0 +1,35 @@
+body.contact {
+
+  section#splash {
+    background-color: $gray;
+    .row {
+      padding: 40px 0 20px;
+    }
+  }
+  section#content {
+    .item {
+      text-align: left;
+    }
+    .required:after { content: " *"; }
+  }
+
+
+  // Responsive
+
+  @include grid-media($medium-screen-grid) {
+    section#splash {
+      .col-left {
+        @include grid-column(6);
+      }
+      .col-right {
+        @include grid-column(6);
+      }
+    }
+    section#content {
+      .item {
+        @include grid-column(4);
+      }
+    }
+  }
+
+}
