@@ -30,7 +30,7 @@ $black: #000;
 
 // Font Colors
 $base-font-color: $black;
-$action-color: $red;
+$action-color: $bright-red;
 
 // Border
 $base-border-color: $light-gray;
@@ -82,6 +82,6 @@ $footer-color: $medium-gray;
 $footer-link-color: $medium-gray;
 $footer-link-hover-color: $bright-red;
 $max-width: 1280px;
-$flip-bg-color: #777;
+$flip-bg-color: $gray;
 $flip-text-color: #fff;
-$flip-button-color: #777;
+$flip-button-color: $gray;
