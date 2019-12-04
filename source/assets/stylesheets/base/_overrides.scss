@@ -44,7 +44,7 @@ header {
     @include navigation-list;
     background-color: transparent;
     margin: 20px 20px 0 20px;
-    padding: 0 20px 20px 20px;
+    padding: 0 10px 20px 20px;
     li {
       line-height: 2em;
       a.button {
@@ -121,6 +121,10 @@ section#content {
   max-width: $max-width;
   padding-top: 25px;
   padding-bottom: 25px;
+  .col-left,
+  .col-right, {
+    margin-bottom: 2em;
+  }
   .row {
     @include grid-container;
     padding: 0;
@@ -265,6 +269,11 @@ ul#menu li.toggler {
       margin-top: 0;
       padding-top: 0;
       border-top: none;
+    }
+  }
+  footer {
+    .col-right {
+      text-align: right;
     }
   }
 }
