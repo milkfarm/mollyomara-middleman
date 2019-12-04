@@ -11,6 +11,9 @@ body.project {
       text-align: left;
     }
     .required:after { content: " *"; }
+    img {
+      margin-bottom: 1em;
+    }
   }
 
 
