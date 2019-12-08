@@ -3,6 +3,17 @@ title: Portfolio
 layout: project
 ---
 
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'revolution/layers', 'revolution/navigation',
+    'revolution/settings', media: 'screen' %>
+  <%= javascript_include_tag 'revolution/jquery.themepunch.revolution.min',
+    'revolution/jquery.themepunch.tools.min',
+    'revolution/revolution.extension.actions.min',
+    'revolution/revolution.extension.layeranimation.min',
+    'revolution/revolution.extension.navigation.min',
+    'revolution/revolution.extension.slideanims.min' %>
+<% end %>
+
 <h4>Notable Projects</h4>
 <ul>
   <li>
