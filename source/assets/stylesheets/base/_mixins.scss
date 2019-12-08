@@ -54,6 +54,78 @@
   }
 }
 
+/* Font Awesome after */
+@mixin awesome-after(
+  $icon: "\f107",
+  $size: 1em,
+  $space: 0.5em,
+  $color: inherit
+) {
+  &:after {
+    display: inline-block;
+    font-family: "Font Awesome 5 Pro";
+    font-size: $size;
+    font-weight: 900;
+    content: $icon;
+    color: $color;
+    padding-left: $space;
+  }
+}
+
+/* Font Awesome before */
+@mixin awesome-before(
+  $icon: "\f0fe",
+  $size: 1em,
+  $space: 0.5em,
+  $color: inherit
+) {
+  &:before {
+    display: inline-block;
+    font-family: "Font Awesome 5 Pro";
+    font-size: $size;
+    font-weight: 900;
+    content: $icon;
+    color: $color;
+    padding-right: $space;
+  }
+}
+
+/* Font Awesome Brands after */
+@mixin awesome-brands-after(
+  $icon: "\f107",
+  $size: 1em,
+  $space: 0.5em,
+  $color: inherit
+) {
+  &:after {
+    display: inline-block;
+    font-family: "Font Awesome 5 Brands";
+    font-size: $size;
+    font-weight: 400;
+    content: $icon;
+    color: $color;
+    padding-left: $space;
+  }
+}
+
+/* Font Awesome Brands before */
+@mixin awesome-brands-before(
+  $icon: "\f0fe",
+  $size: 1em,
+  $space: 0.5em,
+  $color: inherit
+) {
+  &:before {
+    display: inline-block;
+    font-family: "Font Awesome 5 Brands";
+    font-size: $size;
+    font-weight: 400;
+    content: $icon;
+    color: $color;
+    padding-right: $space;
+  }
+}
+
 /* Standard shadow */
 @mixin box-shadow($shadow) {
   box-shadow: $shadow;
