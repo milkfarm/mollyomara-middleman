@@ -80,6 +80,15 @@
       </div>
       <div class="col-right">
         <%= yield %>
+
+        <p class="pagination">
+          <% if current_page.data.previous %>
+            <%= link_to '← Previous', "/projects/#{current_page.data.previous}", class: 'button previous' %>
+          <% end %>
+          <% if current_page.data.next %>
+            <%= link_to 'Next →', "/projects/#{current_page.data.next}", class: 'button next' %>
+          <% end %>
+        </p>
       </div>
     </div>
   </section>
