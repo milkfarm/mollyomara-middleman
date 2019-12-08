@@ -218,23 +218,6 @@ ul#menu li.toggler {
   display: block;
 }
 
-.pagination {
-  margin-top: 1em;
-  .button.next,
-  .button.previous {
-    color: $medium-gray;
-    &:hover {
-      color: $link-hover-color;
-    }
-  }
-  .button.next {
-    float: right;
-  }
-  .button.previous {
-    float: left;
-  }
-}
-
 // Responsive
 
 /* Small screens (default) */

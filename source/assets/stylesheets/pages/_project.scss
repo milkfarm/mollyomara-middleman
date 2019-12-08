@@ -14,6 +14,21 @@ body.project {
     img {
       margin-bottom: 1em;
     }
+    .pagination {
+      margin-top: 1em;
+      .button {
+        color: $medium-gray;
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
+      .next {
+        float: right;
+      }
+      .previous {
+        float: left;
+      }
+    }
   }
 
 
