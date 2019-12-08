@@ -21,6 +21,7 @@
     <%= stylesheet_link_tag 'main' %>
 
     <!-- Other -->
+    <%= yield_content :head %>
     <%= partial 'partials/analytics' %>
     <%= favicon_tag 'favicon.ico' %>
   </head>

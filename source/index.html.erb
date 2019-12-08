@@ -2,13 +2,76 @@
 title: Home
 ---
 
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'revolution/layers', 'revolution/navigation',
+    'revolution/settings', media: 'screen' %>
+  <%= javascript_include_tag 'revolution/jquery.themepunch.revolution.min',
+    'revolution/jquery.themepunch.tools.min',
+    'revolution/revolution.extension.actions.min',
+    'revolution/revolution.extension.layeranimation.min',
+    'revolution/revolution.extension.navigation.min',
+    'revolution/revolution.extension.slideanims.min' %>
+<% end %>
+
 <section id="splash">
   <div class="row" style="padding-top: 0;">
-    <div class="item" style="display: flex; align-items: center; justify-content: center; max-height: 500px; overflow: hidden;">
-      <% id = [1,4,6,7,8,11,13,14,15].sample %>
-      <a href="<%= "/projects/#{id}" %>">
-        <%= image_tag "projects/photo/#{id}/original.jpg" %>
-      </a>
+    <div class="item">
+
+  <div id="rev_slider" class="rev_slider" style="max-width:1320px; max-height:560px; margin:auto;" data-version="5.4.8">
+    <div class="tp-bannertimer tp-top"></div>
+
+    <ul>
+      <% [7,8,11,13].each do |id| %>
+        <li data-transition="fade" data-link="<%= "/projects/#{id}" %>">
+          <%= image_tag "projects/photo/#{id}/original.jpg", class: 'rev-slidebg' %>
+        </li>
+      <% end %>
+    </ul>
+
+  </div> <!-- End #rev_slider -->
+
+  <script type="text/javascript">
+    var tpj = jQuery;
+    var revapi;
+    tpj(document).ready(function() {
+      revapi = tpj('#rev_slider').show().revolution({
+        sliderType:'standard',
+        delay:10000,
+        navigation: {
+          arrows: {
+            enable:true,
+            left : {
+              container:'slider',
+              h_offset:0,
+              v_offset:0
+            },
+            right : {
+              container:'slider',
+              h_offset:0,
+              v_offset:0
+            }
+          },
+          bullets: {
+            enable:false,
+            style:'custom',
+            tmp:'',
+            hide_onleave:true,
+            hide_onmobile:true,
+            direction:'horizontal',
+            h_align:'right',
+            v_align:'bottom',
+            h_offset:0,
+            v_offset:-20,
+            space:10
+          }
+        },
+        gridwidth:1320,
+        gridheight:560,
+        spinner:'off'
+      });
+    });
+  </script>
+
     </div>
   </div>
 </section>
