@@ -110,9 +110,8 @@ section#splash {
     text-align: left;
   }
   p {
+    @include serif;
     font-size: 1.4em;
-    font-family: "Times New Roman", Baskerville, serif;
-    font-style: italic;
   }
 }
 

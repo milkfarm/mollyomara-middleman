@@ -1,3 +1,26 @@
+// Fonts
+
+@mixin body_font {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}
+
+@mixin heading_font {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+}
+
+@mixin serif {
+  font-family: alda, "Times New Roman", Baskerville, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin sans_serif {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}
+
 /* Inline List */
 @mixin inline-list {
   list-style-type: none;
