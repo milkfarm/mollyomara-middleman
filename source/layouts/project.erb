@@ -13,83 +13,92 @@
 
   <section id="content">
     <div class="row">
-      <div class="col-left">
-        <% if current_page.data.id %>
+      <% if current_page.data.id %>
+
+        <div class="col-left">
           <a data-fancybox="gallery" href="<%= "/assets/images/projects/photo/#{current_page.data.id}/xl_original.jpg" %>" title="Click to Enlarge">
             <%= image_tag "projects/photo/#{current_page.data.id}/m_original.jpg" %>
           </a>
           <a data-fancybox="gallery" href="<%= "/assets/images/projects/texture/#{current_page.data.id}/xl_original.jpg" %>" style="display: none;">
             <%= image_tag "projects/texture/#{current_page.data.id}/s_original.jpg" %>
           </a>
-        <% else %>
+        </div>
 
-  <div id="rev_slider" class="rev_slider" style="margin:auto;" data-version="5.4.8">
-    <div class="tp-bannertimer tp-top"></div>
+        <div class="col-right">
+          <%= yield %>
+          <p class="pagination">
+            <% if current_page.data.previous %>
+              <%= link_to '← Previous', "/projects/#{current_page.data.previous}", class: 'button previous' %>
+            <% end %>
+            <% if current_page.data.next %>
+              <%= link_to 'Next →', "/projects/#{current_page.data.next}", class: 'button next' %>
+            <% end %>
+          </p>
+        </div>
 
-    <ul>
-      <% [1,4,6,8,13,15].each do |id| %>
-        <li data-transition="fade" data-link="<%= "/projects/#{id}" %>">
-          <%= image_tag "projects/texture/#{id}/m_original.jpg", class: 'rev-slidebg' %>
-        </li>
+      <% else %>
+
+        <div class="col-left">
+          <%= yield %>
+        </div>
+
+        <div class="col-right">
+
+          <div id="rev_slider" class="rev_slider" style="margin:auto;" data-version="5.4.8">
+            <div class="tp-bannertimer tp-top"></div>
+
+            <ul>
+              <% [1,4,6,8,13,15].each do |id| %>
+                <li data-transition="fadetoleftfadefromright" data-link="<%= "/projects/#{id}" %>">
+                  <%= image_tag "projects/texture/#{id}/m_original.jpg", class: 'rev-slidebg' %>
+                </li>
+              <% end %>
+            </ul>
+
+          </div> <!-- End #rev_slider -->
+
+          <script type="text/javascript">
+            var tpj = jQuery;
+            var revapi;
+            tpj(document).ready(function() {
+              revapi = tpj('#rev_slider').show().revolution({
+                sliderType:'standard',
+                delay:10000,
+                navigation: {
+                  arrows: {
+                    enable:true,
+                    left : {
+                      container:'slider',
+                      h_offset:0,
+                      v_offset:0
+                    },
+                    right : {
+                      container:'slider',
+                      h_offset:0,
+                      v_offset:0
+                    }
+                  },
+                  bullets: {
+                    enable:false,
+                    style:'custom',
+                    tmp:'',
+                    hide_onleave:true,
+                    hide_onmobile:true,
+                    direction:'horizontal',
+                    h_align:'right',
+                    v_align:'bottom',
+                    h_offset:0,
+                    v_offset:-20,
+                    space:10
+                  }
+                },
+                spinner:'off'
+              });
+            });
+          </script>
+        </div>
+
       <% end %>
-    </ul>
-
-  </div> <!-- End #rev_slider -->
-
-  <script type="text/javascript">
-    var tpj = jQuery;
-    var revapi;
-    tpj(document).ready(function() {
-      revapi = tpj('#rev_slider').show().revolution({
-        sliderType:'standard',
-        delay:10000,
-        navigation: {
-          arrows: {
-            enable:true,
-            left : {
-              container:'slider',
-              h_offset:0,
-              v_offset:0
-            },
-            right : {
-              container:'slider',
-              h_offset:0,
-              v_offset:0
-            }
-          },
-          bullets: {
-            enable:false,
-            style:'custom',
-            tmp:'',
-            hide_onleave:true,
-            hide_onmobile:true,
-            direction:'horizontal',
-            h_align:'right',
-            v_align:'bottom',
-            h_offset:0,
-            v_offset:-20,
-            space:10
-          }
-        },
-        spinner:'off'
-      });
-    });
-  </script>
-
-        <% end %>
-      </div>
-      <div class="col-right">
-        <%= yield %>
-
-        <p class="pagination">
-          <% if current_page.data.previous %>
-            <%= link_to '← Previous', "/projects/#{current_page.data.previous}", class: 'button previous' %>
-          <% end %>
-          <% if current_page.data.next %>
-            <%= link_to 'Next →', "/projects/#{current_page.data.next}", class: 'button next' %>
-          <% end %>
-        </p>
-      </div>
     </div>
   </section>
 <% end %>
